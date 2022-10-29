@@ -23,7 +23,7 @@ class Lesson (models.Model):
         return self.title
 
 class Video (models.Model):
-    title = models.Charfield(max_length=200)
+    title = models.CharField(max_length=200)
     added = models.DateTimeField(auto_now_add=True)
     url = EmbedVideoField()
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
