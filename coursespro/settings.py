@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'rest_framework.authtoken',
     'corsheaders',
     'debug_toolbar',
+    'embed_video',
 
     'accounts',
     'courses',
