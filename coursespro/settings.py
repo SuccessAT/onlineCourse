@@ -94,8 +94,12 @@ WSGI_APPLICATION = 'coursespro.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mopcare',
+        'USER': 'mopcare_user',
+        'PASSWORD': 'A9RrZajfqfqUYKBrIB9E9Erq15IY31Z4',
+        'HOST': 'dpg-cdeuv6da4992md3t6sk0-a',
+        'PORT': '5432',
     }
 }
 
@@ -176,4 +180,4 @@ EMAIL_HOST_PASSWORD = '' #os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
-ADMINS = [('Liza','email@email.com')]#json or two vars
+ADMINS = [('mopcare','admin@mopcare.com')]#json or two vars
