@@ -26,10 +26,7 @@ class Video (models.Model):
     title = models.CharField(max_length=200)
     added = models.DateTimeField(auto_now_add=True)
     url = EmbedVideoField()
-    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
+    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name='videos')
 
     def __str__(self):
         return str(self.title)
-
-    class Meta:
-        ordering = ['-added']
