@@ -95,10 +95,10 @@ WSGI_APPLICATION = 'coursespro.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mopcare',
-        'USER': 'mopcare_user',
-        'PASSWORD': 'A9RrZajfqfqUYKBrIB9E9Erq15IY31Z4',
-        'HOST': 'dpg-cdeuv6da4992md3t6sk0-a',
+        'NAME': 'dbsbl8ov4bpl4j',
+        'USER': 'rcvpybdsmzkjqg',
+        'PASSWORD': '2b0aa7d12a4b2edfc4b5c8e39d6917b65a45d4a16f58079a1c8cf473afac4c3a',
+        'HOST': 'ec2-52-23-131-232.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
