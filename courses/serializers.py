@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Lesson, Course
+from .models import Video, Lesson, Course
 from accounts.models import Teacher
 import pysnooper
 
