@@ -3,12 +3,20 @@ from .models import Lesson, Course
 from accounts.models import Teacher
 import pysnooper
 
+class VideoSerializer(serializers.ModelSerializer):
 
+lesson = serializers.StringRelatedField()  # to display the name instead of PK - available for GET requests only
+
+class Meta:
+    model = Video
+
+    fields = ('title', 'added', 'lesson', 'url', 'lesson')
 
 class LessonSerializer(serializers.ModelSerializer):
 
+    videos = VideoSerializer(many=True, required=False)
     course = serializers.StringRelatedField()  # to display the name instead of PK - available for GET requests only
-
+    
     class Meta:
         model = Lesson
 
