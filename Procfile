@@ -1,1 +1,1 @@
-web: gunicorn onlinecoursespro.wsgi
+web: gunicorn coursespro.wsgi
