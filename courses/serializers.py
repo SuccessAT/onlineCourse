@@ -5,12 +5,12 @@ import pysnooper
 
 class VideoSerializer(serializers.ModelSerializer):
 
-lesson = serializers.StringRelatedField()  # to display the name instead of PK - available for GET requests only
+    lesson = serializers.StringRelatedField()  # to display the name instead of PK - available for GET requests only
 
-class Meta:
-    model = Video
+    class Meta:
+        model = Video
 
-    fields = ('title', 'added', 'lesson', 'url', 'lesson')
+        fields = ('title', 'added', 'lesson', 'url', 'lesson')
 
 class LessonSerializer(serializers.ModelSerializer):
 
