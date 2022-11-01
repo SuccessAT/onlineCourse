@@ -11,7 +11,7 @@ class LessonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lesson
 
-        fields = ('id', 'title', 'description', 'videoContent', 'course')
+        fields = ('id', 'title', 'description', 'video', 'course')
 
 class TeacherSerializer(serializers.ModelSerializer):
 
@@ -62,7 +62,7 @@ class CourseSerializer (serializers.ModelSerializer):
                         new_teacher = Teacher.objects.get(user__username=teacher_from_json)
                         instance.teacher.add(new_teacher)
         for lesson in lessons:
-            lesson, updated = Lesson.objects.update_or_create( defaults={'description': lesson["description"]}, videoContent= lesson["videoContent"],  title= lesson["title"])
+            lesson, updated = Lesson.objects.update_or_create( defaults={'description': lesson["description"], 'video': lesson["video"]},  title= lesson["title"])
             instance.save()
 
         return instance
