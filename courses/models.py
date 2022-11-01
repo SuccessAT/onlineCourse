@@ -15,7 +15,7 @@ class Course (models.Model):
 class Lesson (models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(default="No Description")
-    videoContent = EmbedVideoField(default="https://www.youtube.com/embed/P408kZDci0A")
+    videoContent = EmbedVideoField(default="https://www.youtube.com/embed/P408kZDci0A", help_text="This is a help text")
     course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='lessons')
     
     class  Meta:
