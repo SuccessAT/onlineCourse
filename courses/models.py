@@ -15,6 +15,7 @@ class Course (models.Model):
 class Lesson (models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(default="No Description")
+    videoContent = EmbedVideoField()
     course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='lessons')
 
 
