@@ -15,10 +15,11 @@ class Course (models.Model):
 class Lesson (models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(default="No Description")
-    videoContent = EmbedVideoField()
+    videoContent = EmbedVideoField(default="https://www.youtube.com/embed/P408kZDci0A")
     course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='lessons')
 
-
+    class  Meta:
+		verbose_name_plural = "Lesson"
 
     def __str__(self):
         return self.title
