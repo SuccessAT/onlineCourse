@@ -83,6 +83,17 @@ class LessonView (APIView):
         data = LessonSerializer(lesson).data
         return Response(data)
 
+class VideoView (APIView):
+
+    # def get(self, request):
+    #     lesson = Lesson.objects.all().select_related('course')
+    #     serializer = LessonSerializer(lesson, many=True)
+    #     return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def get(self, request, pk):
+        video = get_object_or_404(Video.objects.select_related('lesson'), pk=pk)
+        data = VideoSerializer(lesson).data
+        return Response(data)
 
 class AboutUsView (APIView):
 
