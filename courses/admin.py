@@ -6,5 +6,5 @@ class videoAdmin(AdminVideoMixin, admin.ModelAdmin):
     pass
   
 # Register your models here.
-admin.site.register([Course, Lesson, Video])
+admin.site.register([Course, Lesson])
 admin.site.register(Video, videoAdmin)
