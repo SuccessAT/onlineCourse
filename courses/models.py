@@ -1,6 +1,6 @@
 from django.db import models
 from accounts.models import Student, Teacher
-from embed_video.fields import EmbedVideoField
+#from embed_video.fields import EmbedVideoField
 
 # Create your models here.
 class Course (models.Model):
@@ -15,7 +15,7 @@ class Course (models.Model):
 class Lesson (models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(default="No Description")
-    videoContent = URLField(default="https://www.youtube.com/embed/P408kZDci0A",)
+    videoContent = URLField(default="https://www.youtube.com/embed/P408kZDci0A")
     course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='lessons')
     
     class  Meta:
