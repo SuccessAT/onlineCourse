@@ -19,7 +19,7 @@ class Lesson (models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='lessons')
 
     class  Meta:
-		verbose_name_plural = "Lesson"
+	verbose_name_plural = "Lesson"
 
     def __str__(self):
         return self.title
