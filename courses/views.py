@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Prefetch
-from .models import Course, Lesson
+from .models import Course, Lesson, Video
 from accounts.models import Student, Teacher
 from rest_framework.response import Response
 from rest_framework.views import APIView
