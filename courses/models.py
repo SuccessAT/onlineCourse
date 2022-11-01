@@ -15,7 +15,7 @@ class Course (models.Model):
 class Lesson (models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(default="No Description")
-    video = models.URLField(max_length=200)
+    video = models.URLField(default="https://www.herokuapp.com/mopcare")
     course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='lessons')
     
     class  Meta:
