@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Course, Lesson
+from .models import Course, Lesson, Video
+from embed_video.admin import AdminVideoMixin
 
 # Register your models here.
-admin.site.register([Course, Lesson])
+admin.site.register([Course, Lesson, Video])
