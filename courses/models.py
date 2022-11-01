@@ -27,8 +27,11 @@ class Lesson (models.Model):
 class Video (models.Model):
     title = models.CharField(max_length=200)
     added = models.DateTimeField(auto_now_add=True)
-    url = EmbedVideoField()
+    url = EmbedVideoField(default="https://www.youtube.com/embed/P408kZDci0A")
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name='videos')
-
+	
+   class  Meta:
+	verbose_name_plural = "Video"
+	
     def __str__(self):
-        return str(self.title)
+        return str(self.lesson.title)
