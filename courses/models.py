@@ -17,9 +17,9 @@ class Lesson (models.Model):
     description = models.TextField(default="No Description")
     videoContent = EmbedVideoField(default="https://www.youtube.com/embed/P408kZDci0A")
     course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='lessons')
-
+    
     class  Meta:
-	verbose_name_plural = "Lesson"
+        verbose_name_plural = "Lesson"
 
     def __str__(self):
         return self.title
@@ -30,8 +30,8 @@ class Video (models.Model):
     url = EmbedVideoField(default="https://www.youtube.com/embed/P408kZDci0A")
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name='videos')
 	
-   class  Meta:
-	verbose_name_plural = "Video"
+    class  Meta:
+        verbose_name_plural = "Video"
 	
     def __str__(self):
         return str(self.lesson.title)
